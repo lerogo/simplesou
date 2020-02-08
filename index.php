@@ -3,7 +3,6 @@
 error_reporting(0);
 $t=htmlspecialchars($_POST["t"]);
 $q=urlencode(htmlspecialchars($_POST["q"]));
-//$q=$_GET['q'];
 if ($q==""||$q==null) {
 }else{
   if ($t=="b"){
