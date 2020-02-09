@@ -4,13 +4,19 @@ error_reporting(0);
 $t=htmlspecialchars($_POST["t"]);
 $q=urlencode(htmlspecialchars($_POST["q"]));
 if ($q==""||$q==null) {
+	if($t=="0"){
+		//填写本地网址 解决表单重复提交
+		echo'<script>window.location.href="https://s.lerogo.top/"</script>';
+	}
 }else{
   if ($t=="b"){
+	//baidu
     echo'<script>window.location.href="//www.baidu.com/s?ie=utf-8&word='.$q.'"</script>';
   }else if($t=="g"){
+	//google
     echo'<script>window.location.href="https://www.google.com/search?hl=zh&q='.$q.'"</script>';
   }else{
-    //echo'<script>window.location.href="https://www.google.com/search?hl=zh&q='.$q.'"</script>';
+	//默认百度
     echo'<script>window.location.href="//www.baidu.com/s?ie=utf-8&word='.$q.'"</script>';
   }
 };
@@ -33,10 +39,12 @@ if ($q==""||$q==null) {
   <meta name="x5-fullscreen" content="true"><!--QQ强制全屏-->
   <meta name="x5-page-mode" content="app"><!--QQ应用模式-->
   <title>simple search</title>
-  <link href="style.css?t=<?php echo date("ymdhi"); ?>" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1230786_gdvd1b4wlz.css">
-  <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="sou.js?t=<?php echo date("ymdhi"); ?>"></script>
+  <!--改用本地js 可去掉注释 -->
+  <!-- <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  <script src="jquery3.3.1.min.js"></script>
+  <script src="sou.js"></script>
   <script>
 	var _hmt = _hmt || [];
 	(function() {
@@ -46,7 +54,6 @@ if ($q==""||$q==null) {
 	s.parentNode.insertBefore(hm, s);
 	})();
   </script>
-
 </head>
 
 <body>
@@ -126,7 +133,7 @@ if ($q==""||$q==null) {
             <div class="shlogo"></div>
             <div class="sou">
                 <form action="" method="post" target="_self">
-                    <input class="t" type="text" value="" name="t" hidden>
+                    <input class="t" type="text" value="0" name="t" hidden>
                     <input class="wd" type="text" placeholder="请输入搜索内容" name="q" x-webkit-speech lang="zh-CN">
                     <button><i style="font-size: 20px;" class="iconfont icon-sousuo"></i></button>
                 </form>
@@ -143,12 +150,5 @@ if ($q==""||$q==null) {
 		<p><script src="https://api.lerogo.top/yiyan/api.php"></script></p>
         </div>
     </div>
-<!--
-作者:D.Young
-主页：https://yyv.me/
-github：https://github.com/5iux/sou
-日期：2019-07-26
-版权所有，请勿删除
--->
 </body>
 </html>

@@ -1,18 +1,10 @@
-/*
-作者:D.Young
-主页：https://yyv.me/
-github：https://github.com/5iux/sou
-日期：2019-07-26
-版权所有，请勿删除
-*/
-
 $(document).ready(function() {
-    //判断窗口大小，添加输入框自动完成
+    //body
     var wid = $("body").width();
     if (wid < 640) {
         $(".wd").attr('autocomplete', 'off');
     }
-    //按钮
+    //button
     $(".sou li").click(function() {
         var dt = $(this).attr('data-s');
         wd = $(".wd").val();
@@ -33,7 +25,7 @@ $(document).ready(function() {
         }
 
     });
-    //菜单点击
+    //menu
     $("#menu").click(function(event) {
         $(this).toggleClass('on');
         $(".list").toggleClass('closed');
