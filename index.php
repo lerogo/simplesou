@@ -2,7 +2,7 @@
 //禁用错误报告
 error_reporting(0);
 $t = htmlspecialchars($_POST["t"]);
-$q = urlencode(htmlspecialchars($_POST["q"]));
+$q = urlencode(htmlspecialchars($_POST["q"],ENT_NOQUOTES));
 if ($q == "" || $q == null) {
     if ($t == "0") {
         echo '<script>window.location.href=window.location.href</script>';
