@@ -10,9 +10,9 @@ if ($q == "" || $q == null) {
     if ($t == "b") {
         echo '<script>window.location.href="//www.baidu.com/s?ie=utf-8&word=' . $q . '"</script>';
     } else if ($t == "g") {
-        echo '<script>window.location.href="https://www.google.com/search?hl=zh&q=' . $q . '"</script>';
+        echo '<script>window.location.href="//www.google.com/search?hl=zh&q=' . $q . '"</script>';
     } else if ($t == "i") {
-        echo '<script>window.location.href="https://cn.bing.com/search?ensearch=1&q=' . $q . '"</script>';
+        echo '<script>window.location.href="//cn.bing.com/search?ensearch=1&q=' . $q . '"</script>';
     } else {
         echo '<script>window.location.href="//www.baidu.com/s?ie=utf-8&word=' . $q . '"</script>';
     }
