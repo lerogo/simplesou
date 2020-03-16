@@ -1,7 +1,8 @@
 <?php
 error_reporting(0);
 $t = htmlspecialchars($_POST["t"]);
-$q = urlencode(htmlspecialchars($_POST["q"], ENT_NOQUOTES));
+//$q = urlencode(htmlspecialchars($_POST["q"], ENT_NOQUOTES));
+$q = urlencode($_POST["q"]);
 if ($q == "" || $q == null) {
     if ($t == "0") {
         echo '<script>window.location.href=window.location.href</script>';
